@@ -1,18 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
-  template: ` <button
-    type="button"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
-  >
-    {{ label }}
-  </button>`,
-  styleUrls: ['./button.css'],
+  selector: 'app-button',
+  templateUrl: './button.component.html',
+  styleUrls: [ './button.component.css' ]
 })
-export default class ButtonComponent {
+export class ButtonComponent {
   /**
    * Is this the principal call to action on the page?
    */
@@ -48,6 +41,7 @@ export default class ButtonComponent {
   public get classes(): string[] {
     const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
-    return ['storybook-button', `storybook-button--${this.size}`, mode];
+    return [ 'storybook-button', `storybook-button--${this.size}`, mode ];
   }
+
 }
