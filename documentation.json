@@ -69,7 +69,131 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<h1>Componentes Storybook</h1>"
+            "templateData": "<h1>Teste componentes manipulados no Storybook</h1>\r\n<app-button\r\n  [primary]=\"true\"\r\n  backgroundColor=\"#002ef4\"\r\n  size=\"large\"\r\n  label=\"Teste Botão\"\r\n></app-button>\r\n"
+        },
+        {
+            "name": "Button2Component",
+            "id": "component-Button2Component-5de99f8057602a54078cc31fec8221407e4bb89883af6a8b2302531eef8b543f9afcca27a66ccfd2d75190a2b8dd549cecf9da1c1ba1442a3532a7e888dc31ad",
+            "file": "src/app/shared/components/button2/button2.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button2",
+            "styleUrls": [
+                "./button2.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button2.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 497,
+                            "end": 510,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 498,
+                                "end": 506,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 31,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 23,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 37,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-button2',\n  templateUrl: './button2.component.html',\n  styleUrls: ['./button2.component.css']\n})\nexport class Button2Component {\n\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return [ 'storybook-button', `storybook-button--${this.size}`, mode ];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\r\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
+                    "styleUrl": "./button2.component.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 39
+                    }
+                }
+            },
+            "templateData": "<button type=\"button\" (click)=\"onClick.emit($event)\" [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\">\n  {{ label }}\n</button>\n"
         },
         {
             "name": "ButtonComponent",
@@ -288,7 +412,7 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-fadbcbe82f908005f79007c2091be894aeb61f6bcc0d885ba16b1e3ab6c93b365a7e760750b4428cd926aed61dd0abeaece63a6fcd7b3f8c20142a3f8abb366e",
+            "id": "module-SharedModule-aa570ca81c08de83063c8d579b14550218010ef61fa04b92e10389c7ddbf4c62d794713d7f0196a73a8c919f837141aed6357eccaba9d3aa0c45b7b85f2d8366",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
@@ -300,7 +424,7 @@
                     "optional": false,
                     "returnType": "ModuleWithProviders<any>",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -308,7 +432,7 @@
                     ]
                 }
             ],
-            "sourceCode": "import { ModuleWithProviders, NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './components/button/button.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ]\n})\nexport class SharedModule {\n  static forRoot(): ModuleWithProviders<any> {\n    return {\n      ngModule: SharedModule,\n      providers: [],\n    };\n  }\n}\n",
+            "sourceCode": "import { ModuleWithProviders, NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './components/button/button.component';\nimport { Button2Component } from './components/button2/button2.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    Button2Component\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [\n    ButtonComponent\n  ]\n})\nexport class SharedModule {\n  static forRoot(): ModuleWithProviders<any> {\n    return {\n      ngModule: SharedModule,\n      providers: [],\n    };\n  }\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -317,6 +441,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "Button2Component"
+                        },
                         {
                             "name": "ButtonComponent"
                         }
@@ -328,7 +455,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -347,7 +478,17 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/button/Button.stories.ts",
+                "file": "src/stories/Button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Pair",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button/Button2.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -357,7 +498,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/button/Button.stories.ts",
+                "file": "src/stories/Button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -367,7 +508,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/button/Button.stories.ts",
+                "file": "src/stories/Button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -377,7 +518,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/button/Button.stories.ts",
+                "file": "src/stories/Button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -387,23 +528,43 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/components/button/Button.stories.ts",
+                "file": "src/stories/Button/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button/Button2.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Test",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/shared/components/button/Button.stories.ts": [
+            "src/stories/Button/Button.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/button/Button.stories.ts",
+                    "file": "src/stories/Button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -413,7 +574,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/button/Button.stories.ts",
+                    "file": "src/stories/Button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -423,7 +584,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/button/Button.stories.ts",
+                    "file": "src/stories/Button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -433,7 +594,7 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/button/Button.stories.ts",
+                    "file": "src/stories/Button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -443,11 +604,43 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/components/button/Button.stories.ts",
+                    "file": "src/stories/Button/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
                     "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "Test",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/stories/Button/Button2.stories.ts": [
+                {
+                    "name": "Pair",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button/Button2.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button/Button2.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -470,7 +663,7 @@
         ]
     },
     "coverage": {
-        "count": 10,
+        "count": 12,
         "status": "low",
         "files": [
             {
@@ -483,7 +676,25 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/components/button/Button.stories.ts",
+                "filePath": "src/app/shared/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/app/shared/components/button2/button2.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Button2Component",
+                "coveragePercent": 66,
+                "coverageCount": "4/6",
+                "status": "good"
+            },
+            {
+                "filePath": "src/stories/Button/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -493,7 +704,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/components/button/Button.stories.ts",
+                "filePath": "src/stories/Button/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -503,7 +714,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/components/button/Button.stories.ts",
+                "filePath": "src/stories/Button/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -513,7 +724,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/components/button/Button.stories.ts",
+                "filePath": "src/stories/Button/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -523,7 +734,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/components/button/Button.stories.ts",
+                "filePath": "src/stories/Button/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -533,13 +744,34 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/components/button/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
+                "filePath": "src/stories/Button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Test",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button/Button2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Pair",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button/Button2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/User.ts",

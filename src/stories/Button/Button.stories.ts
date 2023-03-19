@@ -1,6 +1,6 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { ButtonComponent } from './button.component';
+import { ButtonComponent } from '../../app/shared/components/button/button.component';
 
 export default {
   title: 'Components/Button',
@@ -36,3 +36,8 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+export const Test = Template.bind({});
+Test.args = {
+  ...Small.args,
+  label: 'Teste',
+}
